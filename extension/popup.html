@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ToneThree</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand-mark">T3</div>
+        <div>
+          <h1>ToneThree</h1>
+          <p>Same voice. Three sharper directions.</p>
+        </div>
+        <span class="codex-badge">Codex</span>
+      </header>
+
+      <section class="composer">
+        <div class="field-label">
+          <label for="source">Your draft</label>
+          <span id="charCount">0 characters</span>
+        </div>
+        <textarea id="source" maxlength="12000" placeholder="Select text on a page or paste your draft here…"></textarea>
+        <div class="composer-actions">
+          <button id="capture" class="secondary" type="button" title="Read selected text or the focused editor">
+            Read page
+          </button>
+          <button id="rewrite" class="primary" type="button">
+            <span class="button-label">Create 3 variations</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
+
+      <section id="status" class="status hidden" role="status"></section>
+
+      <section id="results" class="results hidden">
+        <nav class="tabs" aria-label="Variations">
+          <button class="tab active" data-style="natural" type="button"><span>01</span> Natural</button>
+          <button class="tab" data-style="personal" type="button"><span>02</span> Personal</button>
+          <button class="tab" data-style="viral" type="button"><span>03</span> Viral</button>
+        </nav>
+
+        <article class="result-card">
+          <div class="result-heading">
+            <div>
+              <span id="resultKicker">NATURAL VERSION</span>
+              <h2 id="resultTitle">Relaxed. Clear. Genuinely you.</h2>
+            </div>
+            <button id="copyIcon" class="icon-button" type="button" title="Copy variation" aria-label="Copy variation">⌘</button>
+          </div>
+          <div id="resultText" class="result-text"></div>
+        </article>
+
+        <div class="result-actions">
+          <button id="copy" class="secondary" type="button">Copy</button>
+          <button id="replace" class="primary" type="button">Replace on page</button>
+        </div>
+      </section>
+
+      <footer>
+        <span class="privacy-dot"></span>
+        Runs through your local Codex CLI
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+# Build output
+native-host/bin/
+native-host/obj/
+dist/
+
+# Local tooling
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Credentials and local Codex state
+.env
+.env.*
+auth.json
+.codex/
